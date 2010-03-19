@@ -1,0 +1,20 @@
+<fieldset class='module_aligned'>
+    <div class="form-row">
+        <label > From:</label> <span > {{object.from_email}}</span> 
+    </div>
+    <div class="form-row">
+        <label> To:</label> <span> {{object.to}}</span> <br>
+    </div>
+    <div class="form-row">
+        <label > Subject:</label> <span> {{object.subject}}</span> <br>
+    </div>
+    <div class="form-row">
+    {% if object.is_multipart %}
+        <div class='email_reader_html_body'><p> {{object.body_html|safe}}</p></div>
+    {% endif %}
+        <div class='email_reader_text_body'><p> {{object.body|linebreaks}}</p> </div>
+    </div>                        
+    <div class="form-row">
+        <label > Sent at:</label> <span> {{object.sent_at}}</span> <br>
+    </div>
+</fieldset>
