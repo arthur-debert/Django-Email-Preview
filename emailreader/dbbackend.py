@@ -17,7 +17,7 @@ class EmailBackend(BaseBackend):
                     body = message.body.encode('utf-8'),
                     sent_at = datetime.datetime.now()
                 )
-                if bool(message.alternatives):
+                if hasattr(message, 'alternatives') and bool(message.alternatives):
                     body, content_type = message.alternatives[0]
                     if content_type == 'text/html':
                         db_mail.body_html = body.encode('utf-8')
