@@ -1,8 +1,2 @@
-.email_reader_html_body{
-    width: 50%;
-    float: left;
-}
-.email_reader_text_body{
-    width: 50%;
-    float: left;
-}
+.email_reader_html_body {text-align: center;}
+.email_reader_html_body iframe {width: 900px; height: 700px;}
