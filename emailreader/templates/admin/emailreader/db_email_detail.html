@@ -10,7 +10,7 @@
     </div>
     <div class="form-row">
     {% if object.is_multipart %}
-        <label>HTML:</label>
+        <label>HTML (<a href="data:text/html;charset=utf-8;base64,{{ escaped_html }}" target="_blank">view in separate window</a>):</label>
         <div class='email_reader_html_body'><iframe src="data:text/html;charset=utf-8;base64,{{ escaped_html }}" frameborder="0" allowtransparency="true"></iframe></div>
     {% endif %}
         <label>Text:</label>
