@@ -1,8 +1,7 @@
 from django.db import models
 
-# Create your models here.
-class DbEmailMessage(models.Model):
 
+class DbEmailMessage(models.Model):
     """docstring for EmailMessageMode"""
 
     sent_at = models.DateTimeField()
