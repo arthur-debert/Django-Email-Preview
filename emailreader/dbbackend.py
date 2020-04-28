@@ -14,6 +14,7 @@ class EmailBackend(BaseBackend):
             return
         try:
             for message in email_messages:
+                logger.info("Caught email to {0}: '{1}'".format(message.to, message.subject))
                 db_mail = DbEmailMessage(
                     from_email=message.from_email,
                     to=';'.join(message.to),
