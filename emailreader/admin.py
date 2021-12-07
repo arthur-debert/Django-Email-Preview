@@ -1,6 +1,7 @@
 from django.contrib import admin
 from emailreader.models import DbEmailMessage
 
+
 class EmailMessageAdmin(admin.ModelAdmin):
     list_display = ('subject', 'to', 'sent_at', 'is_multipart')
     search_fields = ('subject', 'to')
@@ -12,5 +13,8 @@ class EmailMessageAdmin(admin.ModelAdmin):
             'all': ('emailreader/css/email_preview.css',),
         }
 
-admin.site.register(DbEmailMessage, EmailMessageAdmin)
+    def has_add_permission(self, request):
+        return False
 
+
+admin.site.register(DbEmailMessage, EmailMessageAdmin)

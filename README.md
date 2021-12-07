@@ -14,6 +14,5 @@ Quick and dirty how to:
 * Add 'emailreader' to your INSTALLED_APPS.
 * Change the email backend to point to  'emailreader.dbbackend.EmailBackend'
 * Run syncdb to crete the email table.
-* Symlink 'emailreader/media/emailreader' to your [MEDIA_ROOT]/emailreader/
 
 And you are ready to go.

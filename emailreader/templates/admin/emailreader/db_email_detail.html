@@ -1,19 +1,21 @@
 <fieldset class='module_aligned'>
     <div class="form-row">
-        <label > From:</label> <span > {{object.from_email}}</span> 
+        <label>From:</label> <span > {{object.from_email}}</span>
     </div>
     <div class="form-row">
-        <label> To:</label> <span> {{object.to}}</span> <br>
+        <label>To:</label> <span> {{object.to}}</span> <br>
     </div>
     <div class="form-row">
-        <label > Subject:</label> <span> {{object.subject}}</span> <br>
+        <label>Subject:</label> <span> {{object.subject}}</span> <br>
     </div>
     <div class="form-row">
     {% if object.is_multipart %}
-        <div class='email_reader_html_body'><p> {{object.body_html|safe}}</p></div>
+        <label>HTML (<a href="data:text/html;charset=utf-8;base64,{{ escaped_html }}" target="_blank">view in separate window</a>):</label>
+        <div class='email_reader_html_body'><iframe src="data:text/html;charset=utf-8;base64,{{ escaped_html }}" frameborder="0" allowtransparency="true"></iframe></div>
     {% endif %}
+        <label>Text:</label>
         <div class='email_reader_text_body'><p> {{object.body|linebreaks}}</p> </div>
-    </div>                        
+    </div>
     <div class="form-row">
         <label > Sent at:</label> <span> {{object.sent_at}}</span> <br>
     </div>
